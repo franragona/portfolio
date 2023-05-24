@@ -1,0 +1,62 @@
+{% extends 'layout.html' %} {% block content %} {% load static %}
+
+<header class="row bg-black">
+  <div class="col-md-4">
+    <img src="{% static 'porfolio/Screenshot_2.png' %}" alt="" class="img-fluid smaller-image" />
+  </div>
+
+  <div class="col-md-8 my-auto">
+    <h1>I am <strong>Franco Ragona</strong></h1>
+    <h3>I am a Python FullStack Developer</h3>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta est
+      architecto explicabo veritatis amet natus commodi unde aliquam rem? Fugit
+      cumque ex repudiandae quia perspiciatis ratione sapiente deleniti
+      laudantium magni qui explicabo, ipsa rerum soluta error tempora et quasi,
+      ad deserunt at maxime pariatur blanditiis eum fuga eos? Sed magni
+      voluptas, necessitatibus ratione nemo nam odio sunt cum ad, libero
+      reiciendis similique voluptatem ab, in quos laudantium aperiam consectetur
+      quidem ullam dolorem accusantium sit dolores aspernatur possimus. Amet,
+      nisi odio fugit officiis ex beatae dolores reiciendis a autem soluta
+      eligendi ratione iste iusto eius laboriosam. Nostrum, soluta. Rerum, magni
+      obcaecati!
+    </p>
+    <a
+      href="{% static 'porfolio/cv.pdf' %}"
+      class="btn btn-primary btn-lg rounden-0 my-3"
+      >Download CV</a
+    >
+  </div>
+</header>
+
+<div class="row my-4 text-center">
+
+  <h3>My Projects</h3>
+  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, quod.</p>
+
+  {% for project in projects %}
+
+<div class="col-md-4 p-4">
+  <div class="card bg-black card-project">
+    <img src="{{project.image.url}}" alt="{{project.title}}" class="card-img-top" />
+    <div class="card-body">
+
+      <h2>{{project.title}}</h2>
+<p>{{project.description}}</p>
+
+
+{% if project.url %}
+<a href="{{project.url}}" class="btn btn-light rounden-0 btn-sm">{{project.url}}</a>
+
+{% endif %} 
+
+
+    </div>
+  </div>
+</div>
+
+{% endfor %} 
+
+{% endblock %}
+
+</div>
